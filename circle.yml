@@ -1,12 +1,4 @@
-machine:
-  node:
-    version: 0.10.33
-  services:
-    - mongodb
 
-branches:
-  only:
-    - master
 
  dependencies:
    cache_directories:
@@ -17,10 +9,4 @@ branches:
      - sudo cp mongodb-linux-x86_64-2.6.4/bin/* /usr/bin
      - sudo /etc/init.d/mongodb start
 
-test:
-  override:
-    - echo true
 
-general:
-  artifacts:
-    - '**/target/*.jar'
