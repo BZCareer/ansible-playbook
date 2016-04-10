@@ -1,26 +1,8 @@
-machine:
-  node:
-    version: 0.10.33
-  services:
-    - mongodb
-
-branches:
-  only:
-    - master
-
- dependencies:
-   cache_directories:
-     - mongodb-linux-x86_64-2.6.4
-   pre:
-     - if [[ ! -d mongodb-linux-x86_64-2.6.4 ]]; then wget http://downloads.mongodb.org/linux/mongodb-linux-x86_64-2.6.4.tgz && tar xvzf mongodb-linux-x86_64-2.6.4.tgz; fi
-     - sudo /etc/init.d/mongodb stop
-     - sudo cp mongodb-linux-x86_64-2.6.4/bin/* /usr/bin
-     - sudo /etc/init.d/mongodb start
-
-test:
+dependencies:
   override:
-    - echo true
-
-general:
-  artifacts:
-    - '**/target/*.jar'
+    - sudo apt-get purge mongodb-org*
+    - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+    - echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+    - sudo apt-get update
+    - sudo apt-get install -y mongodb-org
+    - sudo service mongod restart
