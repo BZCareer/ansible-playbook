@@ -10,8 +10,10 @@ import org.apache.spark.api.java.JavaSparkContext;
 public class RiskAnalysisSparkMain {
 
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf().setMaster("local[*]").setAppName(
-				"Delinquent Risk Data Report");
+ 	SparkConf conf = new SparkConf().setAppName("Delinquent Risk Data Report");
+		
+		//		SparkConf conf = new SparkConf().setMaster("local[*]").setAppName("Delinquent Risk Data Report");
+	
 		// Using kryo serialization for improved performance
 		conf.set("spark.serializer",
 				"org.apache.spark.serializer.KryoSerializer");

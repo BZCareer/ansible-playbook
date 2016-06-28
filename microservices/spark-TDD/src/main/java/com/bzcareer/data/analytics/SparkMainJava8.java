@@ -10,7 +10,7 @@ import org.apache.spark.api.java.function.Function;
 public class SparkMainJava8 {
 	public static void main(String[] args) {
 		String logFile = "/usr/local/spark/README.md";
-		SparkConf conf = new SparkConf().setMaster("local[*]").setAppName("Search Data Report");
+		SparkConf conf = new SparkConf().setAppName("Search Data Report");
 		
 		JavaSparkContext sc = new JavaSparkContext(conf);
 		JavaRDD<String> logData = sc.textFile(logFile).cache();
