@@ -19,6 +19,7 @@
 				<module>microservices/kafka-consumer</module>
 				<module>microservices/kafka-producer</module>
 				<module>microservices/spark-TDD</module>
+				<module>microservices/spark-streaming</module>
 			</modules>
 		</profile>
 		<profile>
@@ -28,6 +29,7 @@
 				<module>microservices/kafka-consumer</module>
 				<module>microservices/kafka-producer</module>
 				<module>microservices/spark-TDD</module>
+				<module>microservices/spark-streaming</module>
 				<module>distro-assembly</module>
 			</modules>
 		</profile>
