@@ -81,6 +81,7 @@ public class SparkStreamingMain {
 		return logs;
 	}
 
+
 	private static JsonElement extractJsonElement(String items, String searchKey) {
 		JsonParser parser = new JsonParser();
 		JsonObject json = parser.parse(items).getAsJsonObject();
