@@ -14,7 +14,7 @@ import org.apache.spark.streaming.api.java.JavaStreamingContext;
 public class SparkStreamingMain {
 
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf().setMaster("local[*]").setAppName("SparkStreaming Demo");
+		SparkConf conf = new SparkConf().setMaster("spark://192.168.33.40:7077").setAppName("SparkStreaming Demo");
  		JavaStreamingContext jstream = new JavaStreamingContext(conf, Durations.seconds(1));
 		JavaReceiverInputDStream<String> data = jstream.socketTextStream("0.0.0.0", 7766);
 		JavaDStream<String> errList = data.filter(new Function<String, Boolean>() {

@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-		<name>BZCareer :: Monitor.D :: Spark Streaming</name>
+	<name>BZCareer :: Monitor.D :: Spark Streaming</name>
 	<description>BZCareer Spark Streaming Log Preprocessor Implementation </description>
 	<groupId>com.bzcareer.data.analytics</groupId>
 	<artifactId>spark-stream-log-analyzer</artifactId>
@@ -31,6 +31,18 @@
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming-kafka_2.10</artifactId>
 			<version>1.6.1</version>
+		</dependency>
+		<!-- JSON -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.7</version>
+		</dependency>
+		<!-- Apache Cassandra Connector -->
+		<dependency>
+			<groupId>com.datastax.spark</groupId>
+			<artifactId>spark-cassandra-connector_2.10</artifactId>
+			<version>1.6.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
